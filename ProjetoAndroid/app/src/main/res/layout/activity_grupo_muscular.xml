@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_app_gradient"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/txtTituloGrupo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grupos Musculares"
+        android:textColor="@color/app_text_primary"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtSubtituloGrupo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cadastre e visualize os grupos."
+        android:textColor="@color/app_text_secondary"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/edtNomeGrupo"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_input"
+        android:hint="Nome do grupo muscular"
+        android:inputType="textCapWords"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/app_text_primary"
+        android:textColorHint="@color/app_text_secondary" />
+
+    <Button
+        android:id="@+id/btnSalvarGrupo"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/app_accent"
+        android:text="Salvar grupo"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/listaGrupos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="12dp" />
+
+</LinearLayout>

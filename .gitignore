@@ -32,3 +32,9 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Python / FastAPI
+backend/.venv/
+backend/__pycache__/
+backend/**/*.pyc
+backend/.env

@@ -1,5 +1,5 @@
 package com.example.b1academia.api;
-
+import com.example.b1academia.model.LoginRequest;
 import com.example.b1academia.model.Usuario;
 
 import java.util.List;
@@ -16,6 +16,9 @@ public interface ApiService {
 
     @POST("usuarios/")
     Call<Usuario> criarUsuario(@Body Usuario usuario);
+
+    @POST("usuarios/login")
+    Call<Usuario> login(@Body LoginRequest loginRequest);
 
     @GET("usuarios/")
     Call<List<Usuario>> listarUsuarios();

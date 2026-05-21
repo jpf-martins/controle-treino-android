@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/txtTituloCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Criar conta"
+            android:textColor="@color/app_text_primary"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtNomeCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/app_accent"
+            android:hint="Nome"
+            android:inputType="textCapWords"
+            android:textColor="@color/app_text_primary"
+            android:textColorHint="@color/app_text_secondary" />
+
+        <EditText
+            android:id="@+id/edtEmailCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/app_accent"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/app_text_primary"
+            android:textColorHint="@color/app_text_secondary" />
+
+        <EditText
+            android:id="@+id/edtSenhaCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/app_accent"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            android:textColor="@color/app_text_primary"
+            android:textColorHint="@color/app_text_secondary" />
+
+        <EditText
+            android:id="@+id/edtPesoCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/app_accent"
+            android:hint="Peso"
+            android:inputType="numberDecimal"
+            android:textColor="@color/app_text_primary"
+            android:textColorHint="@color/app_text_secondary" />
+
+        <EditText
+            android:id="@+id/edtAlturaCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/app_accent"
+            android:hint="Altura"
+            android:inputType="numberDecimal"
+            android:textColor="@color/app_text_primary"
+            android:textColorHint="@color/app_text_secondary" />
+
+        <EditText
+            android:id="@+id/edtMetaCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/app_accent"
+            android:hint="Meta"
+            android:inputType="textCapWords"
+            android:textColor="@color/app_text_primary"
+            android:textColorHint="@color/app_text_secondary" />
+
+        <Button
+            android:id="@+id/btnCadastrarUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/app_accent"
+            android:text="Cadastrar"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

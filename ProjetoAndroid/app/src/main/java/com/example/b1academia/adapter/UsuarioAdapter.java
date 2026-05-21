@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.b1academia.R;
@@ -14,13 +15,19 @@ import java.util.List;
 
 public class UsuarioAdapter extends ArrayAdapter<Usuario> {
 
+    public interface OnExcluirClickListener {
+        void onExcluirClick(Usuario usuario);
+    }
+
     private Context context;
     private List<Usuario> lista;
+    private OnExcluirClickListener listener;
 
-    public UsuarioAdapter(Context context, List<Usuario> lista) {
+    public UsuarioAdapter(Context context, List<Usuario> lista, OnExcluirClickListener listener) {
         super(context, 0, lista);
         this.context = context;
         this.lista = lista;
+        this.listener = listener;
     }
 
     @Override
@@ -35,6 +42,7 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
 
         TextView txtNomeUsuarioItem = item.findViewById(R.id.txtNomeUsuarioItem);
         TextView txtDetalhesUsuarioItem = item.findViewById(R.id.txtDetalhesUsuarioItem);
+        Button btnExcluirUsuarioItem = item.findViewById(R.id.btnExcluirUsuarioItem);
 
         txtNomeUsuarioItem.setText(usuario.getNome());
 
@@ -43,6 +51,13 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
                         + " | Altura: " + usuario.getAltura()
                         + " | Meta: " + usuario.getMeta()
         );
+
+        btnExcluirUsuarioItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onExcluirClick(usuario);
+            }
+        });
 
         return item;
     }

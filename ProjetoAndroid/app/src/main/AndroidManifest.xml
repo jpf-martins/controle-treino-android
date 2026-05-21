@@ -15,19 +15,11 @@
         android:theme="@style/Theme.B1Academia"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UsuarioActivity"
+            android:name=".CadastroUsuarioActivity"
             android:exported="false" />
+
         <activity
-            android:name=".ExecucaoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ExercicioActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GrupoMuscularActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +27,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".UsuarioActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ExecucaoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ExercicioActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".GrupoMuscularActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

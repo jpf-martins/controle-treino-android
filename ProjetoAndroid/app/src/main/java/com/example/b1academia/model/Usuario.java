@@ -4,6 +4,8 @@ public class Usuario {
 
     private int id;
     private String nome;
+    private String email;
+    private String senha;
     private Double peso;
     private Double altura;
     private String meta;
@@ -11,16 +13,19 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nome, Double peso, Double altura, String meta) {
+    public Usuario(String nome, String email, String senha, Double peso, Double altura, String meta) {
         this.nome = nome;
+        this.email = email;
+        this.senha = senha;
         this.peso = peso;
         this.altura = altura;
         this.meta = meta;
     }
 
-    public Usuario(int id, String nome, Double peso, Double altura, String meta) {
+    public Usuario(int id, String nome, String email, Double peso, Double altura, String meta) {
         this.id = id;
         this.nome = nome;
+        this.email = email;
         this.peso = peso;
         this.altura = altura;
         this.meta = meta;
@@ -41,6 +46,24 @@ public class Usuario {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
 

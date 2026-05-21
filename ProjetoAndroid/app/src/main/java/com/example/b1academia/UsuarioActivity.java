@@ -20,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UsuarioActivity extends AppCompatActivity {
+public class UsuarioActivity extends AppCompatActivity implements UsuarioAdapter.OnExcluirClickListener {
 
     private EditText edtNomeUsuario;
     private EditText edtPesoUsuario;
@@ -71,7 +71,7 @@ public class UsuarioActivity extends AppCompatActivity {
         Double peso = pesoTexto.isEmpty() ? null : Double.parseDouble(pesoTexto);
         Double altura = alturaTexto.isEmpty() ? null : Double.parseDouble(alturaTexto);
 
-        Usuario usuario = new Usuario(nome, peso, altura, meta);
+        Usuario usuario = new Usuario(nome, "", "", peso, altura, meta);
 
         apiService.criarUsuario(usuario).enqueue(new Callback<Usuario>() {
             @Override
@@ -103,7 +103,7 @@ public class UsuarioActivity extends AppCompatActivity {
             public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     usuarios = response.body();
-                    usuarioAdapter = new UsuarioAdapter(UsuarioActivity.this, usuarios);
+                    usuarioAdapter = new UsuarioAdapter(UsuarioActivity.this, usuarios, UsuarioActivity.this);
                     listaUsuarios.setAdapter(usuarioAdapter);
                 } else {
                     Toast.makeText(UsuarioActivity.this, "Erro ao carregar usuários", Toast.LENGTH_SHORT).show();
@@ -112,6 +112,25 @@ public class UsuarioActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Usuario>> call, Throwable t) {
+                Toast.makeText(UsuarioActivity.this, "Falha na conexão com a API", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    @Override
+    public void onExcluirClick(Usuario usuario) {
+        apiService.excluirUsuario(usuario.getId()).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(UsuarioActivity.this, "Usuário excluído com sucesso", Toast.LENGTH_SHORT).show();
+                    carregarUsuarios();
+                } else {
+                    Toast.makeText(UsuarioActivity.this, "Erro ao excluir usuário", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(UsuarioActivity.this, "Falha na conexão com a API", Toast.LENGTH_SHORT).show();
             }
         });

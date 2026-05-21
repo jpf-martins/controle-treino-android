@@ -12,6 +12,7 @@ import com.example.b1academia.bd.DBHelper;
 public class MainActivity extends AppCompatActivity {
 
     private DBHelper dbHelper;
+    private Button btnUsuarios;
     private Button btnGrupos;
     private Button btnExercicios;
     private Button btnExecucoes;
@@ -24,14 +25,15 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DBHelper(this);
         dbHelper.getWritableDatabase();
 
+        btnUsuarios = findViewById(R.id.btnUsuarios);
         btnGrupos = findViewById(R.id.btnGrupos);
         btnExercicios = findViewById(R.id.btnExercicios);
         btnExecucoes = findViewById(R.id.btnExecucoes);
 
-        btnExercicios.setOnClickListener(new View.OnClickListener() {
+        btnUsuarios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ExercicioActivity.class);
+                Intent intent = new Intent(MainActivity.this, UsuarioActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnExercicios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ExercicioActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btnExecucoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +61,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

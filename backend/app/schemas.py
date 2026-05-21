@@ -5,13 +5,30 @@ from pydantic import BaseModel
 
 class UsuarioBase(BaseModel):
     nome: str
+    email: str
     peso: Decimal | None = None
     altura: Decimal | None = None
     meta: str | None = None
 
 
 class UsuarioCreate(UsuarioBase):
-    pass
+    senha: str
+
+
+class UsuarioResponse(UsuarioBase):
+    id: int
+
+    class Config:
+        from_attributes = True
+
+
+class LoginRequest(BaseModel):
+    email: str
+    senha: str
+
+
+class UsuarioCreate(UsuarioBase):
+    senha: str
 
 
 class UsuarioResponse(UsuarioBase):

@@ -9,6 +9,8 @@ class Usuario(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(100), nullable=False)
+    email = Column(String(100), nullable=False)
+    senha = Column(String(100), nullable=False)
     peso = Column(DECIMAL(5, 2))
     altura = Column(DECIMAL(4, 2))
     meta = Column(String(50))

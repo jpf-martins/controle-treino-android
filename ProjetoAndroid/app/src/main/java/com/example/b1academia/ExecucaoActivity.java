@@ -1,11 +1,6 @@
 package com.example.b1academia;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.HashMap;
-import java.util.Map;
-
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
@@ -16,27 +11,39 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.b1academia.adapter.ExecucaoAdapter;
 import com.example.b1academia.dao.ExecucaoAppDAO;
 import com.example.b1academia.dao.ExercicioDAO;
 import com.example.b1academia.model.ExecucaoApp;
 import com.example.b1academia.model.Exercicio;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class ExecucaoActivity extends AppCompatActivity implements ExecucaoAdapter.OnExcluirClickListener {
+
     private EditText edtDataExecucao;
     private EditText edtCargaExecucao;
     private EditText edtObservacaoExecucao;
     private Spinner spinnerExercicios;
     private Button btnSalvarExecucao;
     private ListView listaExecucoes;
+
     private ExecucaoAppDAO execucaoAppDAO;
     private ExercicioDAO exercicioDAO;
+
     private List<Exercicio> exercicios;
     private List<String> nomesExercicios;
     private List<ExecucaoApp> execucoes;
+
     private ArrayAdapter<String> spinnerAdapter;
     private ExecucaoAdapter execucaoAdapter;
 
@@ -51,6 +58,16 @@ public class ExecucaoActivity extends AppCompatActivity implements ExecucaoAdapt
         spinnerExercicios = findViewById(R.id.spinnerExercicios);
         btnSalvarExecucao = findViewById(R.id.btnSalvarExecucao);
         listaExecucoes = findViewById(R.id.listaExecucoes);
+
+        edtDataExecucao.setFocusable(false);
+        edtDataExecucao.setClickable(true);
+
+        edtDataExecucao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abrirSeletorData();
+            }
+        });
 
         execucaoAppDAO = new ExecucaoAppDAO(this);
         exercicioDAO = new ExercicioDAO(this);
@@ -93,6 +110,30 @@ public class ExecucaoActivity extends AppCompatActivity implements ExecucaoAdapt
                 }
             }
         });
+    }
+
+    private void abrirSeletorData() {
+        Calendar calendario = Calendar.getInstance();
+
+        int ano = calendario.get(Calendar.YEAR);
+        int mes = calendario.get(Calendar.MONTH);
+        int dia = calendario.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                (view, anoSelecionado, mesSelecionado, diaSelecionado) -> {
+                    Calendar dataSelecionada = Calendar.getInstance();
+                    dataSelecionada.set(anoSelecionado, mesSelecionado, diaSelecionado);
+
+                    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                    edtDataExecucao.setText(formato.format(dataSelecionada.getTime()));
+                },
+                ano,
+                mes,
+                dia
+        );
+
+        datePickerDialog.show();
     }
 
     private void carregarSpinnerExercicios() {

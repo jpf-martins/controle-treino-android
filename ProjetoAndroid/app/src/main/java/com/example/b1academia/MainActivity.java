@@ -12,7 +12,6 @@ import com.example.b1academia.bd.DBHelper;
 public class MainActivity extends AppCompatActivity {
 
     private DBHelper dbHelper;
-    private Button btnUsuarios;
     private Button btnGrupos;
     private Button btnExercicios;
     private Button btnExecucoes;
@@ -25,18 +24,10 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DBHelper(this);
         dbHelper.getWritableDatabase();
 
-        btnUsuarios = findViewById(R.id.btnUsuarios);
         btnGrupos = findViewById(R.id.btnGrupos);
         btnExercicios = findViewById(R.id.btnExercicios);
         btnExecucoes = findViewById(R.id.btnExecucoes);
 
-        btnUsuarios.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UsuarioActivity.class);
-                startActivity(intent);
-            }
-        });
 
         btnGrupos.setOnClickListener(new View.OnClickListener() {
             @Override

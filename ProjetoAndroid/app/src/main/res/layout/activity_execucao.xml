@@ -1,98 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/bg_app_gradient"
-    android:padding="24dp">
+    android:background="@color/app_background">
 
-    <TextView
-        android:id="@+id/txtTituloExecucao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Execuções de Treino"
-        android:textColor="@color/app_text_primary"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/txtSubtituloExecucao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Registre carga, data e observações."
-        android:textColor="@color/app_text_secondary"
-        android:textSize="15sp" />
-
-    <EditText
-        android:id="@+id/edtDataExecucao"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/app_accent"
-        android:hint="Selecionar data"
-        android:inputType="none"
-        android:focusable="false"
-        android:clickable="true"
-        android:textColor="@color/app_text_primary"
-        android:textColorHint="@color/app_text_secondary" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/edtCargaExecucao"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/bg_input"
-        android:hint="Carga"
-        android:inputType="numberDecimal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:textColor="@color/app_text_primary"
-        android:textColorHint="@color/app_text_secondary" />
+        <TextView
+            android:id="@+id/txtTituloExecucao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Execuções de Treino"
+            android:textColor="@color/app_text_primary"
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/edtObservacaoExecucao"
-        android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/bg_input"
-        android:gravity="top|start"
-        android:hint="Observação"
-        android:inputType="textMultiLine"
-        android:minLines="2"
-        android:paddingLeft="16dp"
-        android:paddingTop="14dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="14dp"
-        android:textColor="@color/app_text_primary"
-        android:textColorHint="@color/app_text_secondary" />
+        <TextView
+            android:id="@+id/txtSubtituloExecucao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Registre carga, data e observações."
+            android:textColor="@color/app_text_secondary"
+            android:textSize="15sp" />
 
-    <Spinner
-        android:id="@+id/spinnerExercicios"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/bg_input" />
+        <EditText
+            android:id="@+id/edtDataExecucao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/app_accent"
+            android:hint="Selecionar data"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="true"
+            android:textColor="@color/app_text_primary"
+            android:textColorHint="@color/app_text_secondary" />
 
-    <Button
-        android:id="@+id/btnSalvarExecucao"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/app_accent"
-        android:text="Salvar execução"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        <EditText
+            android:id="@+id/edtCargaExecucao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/app_accent"
+            android:hint="Carga"
+            android:inputType="numberDecimal"
+            android:textColor="@color/app_text_primary"
+            android:textColorHint="@color/app_text_secondary" />
 
-    <ListView
-        android:id="@+id/listaExecucoes"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:layout_weight="1"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="12dp" />
+        <EditText
+            android:id="@+id/edtObservacaoExecucao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/app_accent"
+            android:hint="Observação"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:textColor="@color/app_text_primary"
+            android:textColorHint="@color/app_text_secondary" />
 
-</LinearLayout>
+        <Spinner
+            android:id="@+id/spinnerExercicios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/app_card"
+            android:padding="12dp" />
+
+        <Spinner
+            android:id="@+id/spinnerTreinos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/app_card"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnSalvarExecucao"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/app_accent"
+            android:text="Salvar execução"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listaExecucoes"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:layout_marginTop="24dp"
+            android:divider="@color/app_divider"
+            android:dividerHeight="1dp" />
+
+    </LinearLayout>
+</ScrollView>

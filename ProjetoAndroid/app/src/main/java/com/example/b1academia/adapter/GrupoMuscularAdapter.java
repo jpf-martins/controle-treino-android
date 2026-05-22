@@ -14,19 +14,20 @@ import com.example.b1academia.model.GrupoMuscular;
 import java.util.List;
 
 public class GrupoMuscularAdapter extends ArrayAdapter<GrupoMuscular> {
-    private Context context;
-    private List<GrupoMuscular> lista;
-    private OnExcluirClickListener onExcluirClickListener;
 
     public interface OnExcluirClickListener {
         void onExcluirClick(GrupoMuscular grupo);
     }
 
-    public GrupoMuscularAdapter(Context context, List<GrupoMuscular> lista, OnExcluirClickListener onExcluirClickListener) {
+    private Context context;
+    private List<GrupoMuscular> lista;
+    private OnExcluirClickListener listener;
+
+    public GrupoMuscularAdapter(Context context, List<GrupoMuscular> lista, OnExcluirClickListener listener) {
         super(context, 0, lista);
         this.context = context;
         this.lista = lista;
-        this.onExcluirClickListener = onExcluirClickListener;
+        this.listener = listener;
     }
 
     @Override
@@ -37,7 +38,7 @@ public class GrupoMuscularAdapter extends ArrayAdapter<GrupoMuscular> {
             item = LayoutInflater.from(context).inflate(R.layout.item_grupo, parent, false);
         }
 
-        final GrupoMuscular grupo = lista.get(position);
+        GrupoMuscular grupo = lista.get(position);
 
         TextView txtItemGrupo = item.findViewById(R.id.txtItemGrupo);
         Button btnExcluirGrupoItem = item.findViewById(R.id.btnExcluirGrupoItem);
@@ -46,10 +47,8 @@ public class GrupoMuscularAdapter extends ArrayAdapter<GrupoMuscular> {
 
         btnExcluirGrupoItem.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (onExcluirClickListener != null) {
-                    onExcluirClickListener.onExcluirClick(grupo);
-                }
+            public void onClick(View view) {
+                listener.onExcluirClick(grupo);
             }
         });
 

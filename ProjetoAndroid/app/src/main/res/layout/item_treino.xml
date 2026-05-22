@@ -7,7 +7,7 @@
     android:background="@color/app_card">
 
     <TextView
-        android:id="@+id/txtDataExecucaoItem"
+        android:id="@+id/txtNomeTreinoItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/app_text_primary"
@@ -15,7 +15,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/txtDetalhesExecucaoItem"
+        android:id="@+id/txtDescricaoTreinoItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -23,7 +23,7 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/btnExcluirExecucaoItem"
+        android:id="@+id/btnExcluirTreinoItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

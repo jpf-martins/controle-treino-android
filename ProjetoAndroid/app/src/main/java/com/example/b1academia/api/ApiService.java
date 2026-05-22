@@ -1,5 +1,10 @@
 package com.example.b1academia.api;
+
+import com.example.b1academia.model.ExecucaoApp;
+import com.example.b1academia.model.Exercicio;
+import com.example.b1academia.model.GrupoMuscular;
 import com.example.b1academia.model.LoginRequest;
+import com.example.b1academia.model.Treino;
 import com.example.b1academia.model.Usuario;
 
 import java.util.List;
@@ -31,4 +36,68 @@ public interface ApiService {
 
     @DELETE("usuarios/{id}")
     Call<Void> excluirUsuario(@Path("id") int id);
+
+
+    @POST("grupos/")
+    Call<GrupoMuscular> criarGrupo(@Body GrupoMuscular grupo);
+
+    @GET("grupos/")
+    Call<List<GrupoMuscular>> listarGrupos();
+
+    @GET("grupos/{id}")
+    Call<GrupoMuscular> buscarGrupo(@Path("id") int id);
+
+    @PUT("grupos/{id}")
+    Call<GrupoMuscular> atualizarGrupo(@Path("id") int id, @Body GrupoMuscular grupo);
+
+    @DELETE("grupos/{id}")
+    Call<Void> excluirGrupo(@Path("id") int id);
+
+
+    @POST("exercicios/")
+    Call<Exercicio> criarExercicio(@Body Exercicio exercicio);
+
+    @GET("exercicios/")
+    Call<List<Exercicio>> listarExercicios();
+
+    @GET("exercicios/{id}")
+    Call<Exercicio> buscarExercicio(@Path("id") int id);
+
+    @PUT("exercicios/{id}")
+    Call<Exercicio> atualizarExercicio(@Path("id") int id, @Body Exercicio exercicio);
+
+    @DELETE("exercicios/{id}")
+    Call<Void> excluirExercicio(@Path("id") int id);
+
+
+    @POST("treinos/")
+    Call<Treino> criarTreino(@Body Treino treino);
+
+    @GET("treinos/")
+    Call<List<Treino>> listarTreinos();
+
+    @GET("treinos/{id}")
+    Call<Treino> buscarTreino(@Path("id") int id);
+
+    @PUT("treinos/{id}")
+    Call<Treino> atualizarTreino(@Path("id") int id, @Body Treino treino);
+
+    @DELETE("treinos/{id}")
+    Call<Void> excluirTreino(@Path("id") int id);
+
+
+    @POST("execucoes/")
+    Call<ExecucaoApp> criarExecucao(@Body ExecucaoApp execucao);
+
+    @GET("execucoes/")
+    Call<List<ExecucaoApp>> listarExecucoes();
+
+    @GET("execucoes/{id}")
+    Call<ExecucaoApp> buscarExecucao(@Path("id") int id);
+
+    @PUT("execucoes/{id}")
+    Call<ExecucaoApp> atualizarExecucao(@Path("id") int id, @Body ExecucaoApp execucao);
+
+    @DELETE("execucoes/{id}")
+    Call<Void> excluirExecucao(@Path("id") int id);
 }

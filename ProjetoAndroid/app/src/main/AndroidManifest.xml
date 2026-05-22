@@ -47,6 +47,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".TreinoActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

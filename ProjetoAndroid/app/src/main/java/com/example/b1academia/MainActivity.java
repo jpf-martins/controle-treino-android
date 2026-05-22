@@ -7,13 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.b1academia.bd.DBHelper;
-
 public class MainActivity extends AppCompatActivity {
 
-    private DBHelper dbHelper;
     private Button btnGrupos;
     private Button btnExercicios;
+    private Button btnTreinos;
     private Button btnExecucoes;
 
     @Override
@@ -21,13 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dbHelper = new DBHelper(this);
-        dbHelper.getWritableDatabase();
-
         btnGrupos = findViewById(R.id.btnGrupos);
         btnExercicios = findViewById(R.id.btnExercicios);
+        btnTreinos = findViewById(R.id.btnTreinos);
         btnExecucoes = findViewById(R.id.btnExecucoes);
-
 
         btnGrupos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ExercicioActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnTreinos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TreinoActivity.class);
                 startActivity(intent);
             }
         });

@@ -96,6 +96,19 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/btnTreinos"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="14dp"
+            android:backgroundTint="@color/app_accent"
+            android:elevation="6dp"
+            android:text="Treinos"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <Button
             android:id="@+id/btnExecucoes"
             android:layout_width="match_parent"
             android:layout_height="60dp"

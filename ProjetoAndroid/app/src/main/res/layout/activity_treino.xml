@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_background"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/txtTituloTreino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Treinos"
+        android:textColor="@color/app_text_primary"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtSubtituloTreino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cadastre seus treinos personalizados."
+        android:textColor="@color/app_text_secondary"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/edtNomeTreino"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/app_accent"
+        android:hint="Nome do treino"
+        android:inputType="textCapWords"
+        android:textColor="@color/app_text_primary"
+        android:textColorHint="@color/app_text_secondary" />
+
+    <EditText
+        android:id="@+id/edtDescricaoTreino"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/app_accent"
+        android:hint="Descrição"
+        android:inputType="textMultiLine"
+        android:minLines="2"
+        android:textColor="@color/app_text_primary"
+        android:textColorHint="@color/app_text_secondary" />
+
+    <Button
+        android:id="@+id/btnSalvarTreino"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/app_accent"
+        android:text="Salvar treino"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/listaTreinos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:divider="@color/app_divider"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>
